@@ -34,7 +34,9 @@ MPMusicPlayerController *musicPlayer;
     swipeRightGestureRecognizer.delegate = self;
     swipeRightGestureRecognizer.numberOfTouchesRequired = 1;
     
+    UIPinchGestureRecognizer* pinchGestureRecognizer = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinch:)];
     UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    [self.view addGestureRecognizer:pinchGestureRecognizer];
     [self.view addGestureRecognizer:tapGestureRecognizer];
     [self.view addGestureRecognizer:swipeLeftGestureRecognizer];
     [self.view addGestureRecognizer:swipeRightGestureRecognizer];
@@ -147,4 +149,14 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 -(void) pan:(UIPanGestureRecognizer*)pan{
     //NSLog(@"Pan");
 }
+-(void) pinch:(UIPinchGestureRecognizer*) pinch{
+    musicPlayer = [MPMusicPlayerController systemMusicPlayer];
+    CGFloat volume = musicPlayer.volume;
+    volume += pinch.velocity*0.005;
+    NSLog(@"volume: %f", volume);
+    [musicPlayer setVolume:volume];
+    
+}
+
+
 @end
