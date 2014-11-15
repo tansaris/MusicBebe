@@ -34,6 +34,8 @@ MPMusicPlayerController *musicPlayer;
     swipeRightGestureRecognizer.delegate = self;
     swipeRightGestureRecognizer.numberOfTouchesRequired = 1;
     
+    UITapGestureRecognizer *tapGestureRecognizer = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(tap:)];
+    [self.view addGestureRecognizer:tapGestureRecognizer];
     [self.view addGestureRecognizer:swipeLeftGestureRecognizer];
     [self.view addGestureRecognizer:swipeRightGestureRecognizer];
     // Do any additional setup after loading the view, typically from a nib.
@@ -134,6 +136,12 @@ shouldRecognizeSimultaneouslyWithGestureRecognizer:(UIGestureRecognizer *)otherG
 //    [musicPlayer skipToNextItem];
 //}
 -(void) tap:(UITapGestureRecognizer*)tap{
+    musicPlayer = [MPMusicPlayerController systemMusicPlayer];
+    if(musicPlayer.playbackState == MPMusicPlaybackStatePlaying){
+        [musicPlayer pause];
+    }else if (musicPlayer.playbackState == MPMusicPlaybackStatePaused){
+        [musicPlayer play];
+    }
     NSLog(@"Tap");
 }
 -(void) pan:(UIPanGestureRecognizer*)pan{
