@@ -9,7 +9,6 @@
 #import "ViewController.h"
 
 @interface ViewController ()
-
 @end
 
 @implementation ViewController
@@ -17,10 +16,21 @@
 UIDevice *device;
 MPMusicPlayerController *musicPlayer;
 
+
 - (void)viewDidLoad {
     device = [UIDevice currentDevice];
+    MPMediaItem *currentItem = [musicPlayer nowPlayingItem];
+    UIImage *artworkImage = [UIImage imageNamed:@"noArtworkImage.png"];
+    MPMediaItemArtwork *artwork = [currentItem valueForProperty: MPMediaItemPropertyArtwork];
+    
+    if (artwork) {
+        artworkImage = [artwork imageWithSize: CGSizeMake (200, 200)];
+    }
+    
+    [artworkImageView setImage:artworkImage];
+    [self registerMediaPlayerNotifications];
     [super viewDidLoad];
-    device.proximityMonitoringEnabled = YES;
+       device.proximityMonitoringEnabled = YES;
     if (device.proximityMonitoringEnabled == YES){
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(proximityChanged:) name:@"UIDeviceProximityStateDidChangeNotification" object:device];
     }
@@ -64,6 +74,51 @@ MPMusicPlayerController *musicPlayer;
         }
     }
     
+    
+}
+- (void) registerMediaPlayerNotifications
+{
+    musicPlayer = [MPMusicPlayerController systemMusicPlayer];
+    NSNotificationCenter *notificationCenter = [NSNotificationCenter defaultCenter];
+    [notificationCenter addObserver: self
+                           selector: @selector (handle_NowPlayingItemChanged:)
+                               name: MPMusicPlayerControllerNowPlayingItemDidChangeNotification
+                             object: musicPlayer];
+    [musicPlayer beginGeneratingPlaybackNotifications];
+    
+}
+- (void) handle_NowPlayingItemChanged: (id) notification
+{
+   
+    MPMediaItem *currentItem = [musicPlayer nowPlayingItem];
+    UIImage *artworkImage = [UIImage imageNamed:@"NoImage1.png"];
+    MPMediaItemArtwork *artwork = [currentItem valueForProperty: MPMediaItemPropertyArtwork];
+    if (artwork) {
+        artworkImage = [artwork imageWithSize: CGSizeMake (200, 200)];
+    }
+    
+    [artworkImageView setImage:artworkImage];
+    
+    NSString *titleString = [currentItem valueForProperty:MPMediaItemPropertyTitle];
+    if (titleString) {
+        titleLabel.text = [NSString stringWithFormat:@"Title: %@",titleString];
+    } else {
+        titleLabel.text = @"Title: Unknown title";
+    }
+    
+    NSString *artistString = [currentItem valueForProperty:MPMediaItemPropertyArtist];
+    if (artistString) {
+        artistLabel.text = [NSString stringWithFormat:@"Artist: %@",artistString];
+    } else {
+        artistLabel.text = @"Artist: Unknown artist";
+    }
+    
+    NSString *albumString = [currentItem valueForProperty:MPMediaItemPropertyAlbumTitle];
+    if (albumString) {
+        albumLabel.text = [NSString stringWithFormat:@"Album: %@",albumString];
+    } else {
+        albumLabel.text = @"Album: Unknown album";
+    }
     
 }
 
