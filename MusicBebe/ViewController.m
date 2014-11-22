@@ -101,23 +101,23 @@ MPMusicPlayerController *musicPlayer;
     
     NSString *titleString = [currentItem valueForProperty:MPMediaItemPropertyTitle];
     if (titleString) {
-        titleLabel.text = [NSString stringWithFormat:@"Title: %@",titleString];
+        titleLabel.text = [NSString stringWithFormat:@"%@",titleString];
     } else {
-        titleLabel.text = @"Title: Unknown title";
+        titleLabel.text = @"Unknown title";
     }
     
     NSString *artistString = [currentItem valueForProperty:MPMediaItemPropertyArtist];
     if (artistString) {
-        artistLabel.text = [NSString stringWithFormat:@"Artist: %@",artistString];
+        artistLabel.text = [NSString stringWithFormat:@"%@",artistString];
     } else {
-        artistLabel.text = @"Artist: Unknown artist";
+        artistLabel.text = @"Unknown artist";
     }
     
     NSString *albumString = [currentItem valueForProperty:MPMediaItemPropertyAlbumTitle];
     if (albumString) {
-        albumLabel.text = [NSString stringWithFormat:@"Album: %@",albumString];
+        albumLabel.text = [NSString stringWithFormat:@"%@",albumString];
     } else {
-        albumLabel.text = @"Album: Unknown album";
+        albumLabel.text = @"Unknown album";
     }
     
 }

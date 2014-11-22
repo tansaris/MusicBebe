@@ -11,11 +11,12 @@
 		270BE7CF1A15EA0300D729F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BE7CE1A15EA0300D729F6 /* AppDelegate.m */; };
 		270BE7D21A15EA0300D729F6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BE7D11A15EA0300D729F6 /* ViewController.m */; };
 		270BE7D51A15EA0300D729F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 270BE7D31A15EA0300D729F6 /* Main.storyboard */; };
-		270BE7D71A15EA0300D729F6 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 270BE7D61A15EA0300D729F6 /* Images.xcassets */; };
 		270BE7DA1A15EA0300D729F6 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 270BE7D81A15EA0300D729F6 /* LaunchScreen.xib */; };
 		270BE7E61A15EA0300D729F6 /* MusicBebeTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 270BE7E51A15EA0300D729F6 /* MusicBebeTests.m */; };
 		270BE7F01A15EB4900D729F6 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 270BE7EF1A15EB4900D729F6 /* MediaPlayer.framework */; };
 		3A38A13F1A20D3E700253819 /* NoImage1.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A38A13E1A20D3E700253819 /* NoImage1.png */; };
+		3A8DD9591A20D6A000E2A125 /* SplashScreenMB.png in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DD9581A20D6A000E2A125 /* SplashScreenMB.png */; };
+		3A8DD95D1A20D8E000E2A125 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3A8DD95C1A20D8E000E2A125 /* Images.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,13 +38,14 @@
 		270BE7D01A15EA0300D729F6 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		270BE7D11A15EA0300D729F6 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		270BE7D41A15EA0300D729F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		270BE7D61A15EA0300D729F6 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		270BE7D91A15EA0300D729F6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		270BE7DF1A15EA0300D729F6 /* MusicBebeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MusicBebeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		270BE7E41A15EA0300D729F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		270BE7E51A15EA0300D729F6 /* MusicBebeTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MusicBebeTests.m; sourceTree = "<group>"; };
 		270BE7EF1A15EB4900D729F6 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 		3A38A13E1A20D3E700253819 /* NoImage1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = NoImage1.png; sourceTree = "<group>"; };
+		3A8DD9581A20D6A000E2A125 /* SplashScreenMB.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SplashScreenMB.png; sourceTree = "<group>"; };
+		3A8DD95C1A20D8E000E2A125 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,12 +91,13 @@
 			children = (
 				3A38A13E1A20D3E700253819 /* NoImage1.png */,
 				270BE7CD1A15EA0300D729F6 /* AppDelegate.h */,
+				3A8DD9581A20D6A000E2A125 /* SplashScreenMB.png */,
 				270BE7CE1A15EA0300D729F6 /* AppDelegate.m */,
 				270BE7D01A15EA0300D729F6 /* ViewController.h */,
 				270BE7D11A15EA0300D729F6 /* ViewController.m */,
 				270BE7D31A15EA0300D729F6 /* Main.storyboard */,
-				270BE7D61A15EA0300D729F6 /* Images.xcassets */,
 				270BE7D81A15EA0300D729F6 /* LaunchScreen.xib */,
+				3A8DD95C1A20D8E000E2A125 /* Images.xcassets */,
 				270BE7C91A15EA0300D729F6 /* Supporting Files */,
 			);
 			path = MusicBebe;
@@ -208,9 +211,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				3A38A13F1A20D3E700253819 /* NoImage1.png in Resources */,
+				3A8DD95D1A20D8E000E2A125 /* Images.xcassets in Resources */,
 				270BE7D51A15EA0300D729F6 /* Main.storyboard in Resources */,
 				270BE7DA1A15EA0300D729F6 /* LaunchScreen.xib in Resources */,
-				270BE7D71A15EA0300D729F6 /* Images.xcassets in Resources */,
+				3A8DD9591A20D6A000E2A125 /* SplashScreenMB.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
